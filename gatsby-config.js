@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.fehrnstrom-grohn.se",
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-postcss"],
 };
