@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+:root {
+  font-family: "Poiret One", cursive;
+}
