@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksebgrohn_github_io=self.webpackChunksebgrohn_github_io||[]).push([[678],{704:function(e,t,n){n.r(t);var r=n(294),s={width:"100vw",height:"100vh",padding:96,background:"#f0f0f0",color:"#232129",fontFamily:"-apple-system, Roboto, sans-serif, serif"},h={fontSize:40};t.default=function(){return r.createElement("main",{style:s},r.createElement("title",null,"🌿 Fehrnström-Gröhn"),r.createElement("h1",{style:h},"🌿 Fehrnström-Gröhn"))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-73de07ec265bdf39d0a7.js.map
