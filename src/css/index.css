@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
 
-:root {
-  font-family: "Poiret One", cursive;
+.font-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font-poiret {
+  font-family: "Poiret One", sans-serif;
 }
