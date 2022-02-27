@@ -32,7 +32,7 @@ const PersonBox = ({
 }) => (
   <div
     className={c(
-      ["basis-2/5", "md:basis-1/3"],
+      ["flex-auto", "basis-2/5", "md:basis-full"],
       ["flex", "flex-col", "gap-4", "md:gap-8"],
       [couldWrap ? "order-last" : "order-none", "md:order-none"],
       "text-center"

@@ -12,11 +12,8 @@ export const InlineBlockSpan = ({
 export const Para = ({ children }: { children: ReactNode }) => (
   <p
     className={c(
-      "text-base",
-      "md:text-lg",
-      "lg:text-xl",
-      "font-sans",
-      "font-light"
+      ["text-base", "md:text-lg", "lg:text-xl"],
+      ["font-sans", "font-light"]
     )}
   >
     {children}
@@ -27,10 +24,8 @@ export const Emph = ({ children }: { children: ReactNode }) => (
   <span
     className={c(
       "font-medium",
-      "bg-clip-text",
-      "text-transparent",
-      "bg-gradient-to-br",
-      ["from-teal-300", "to-blue-400"]
+      ["bg-clip-text", "text-transparent"],
+      ["bg-gradient-to-br", "from-teal-300", "to-blue-400"]
     )}
   >
     {children}
@@ -46,9 +41,7 @@ export const Heading1 = ({
 }) => (
   <h2
     className={c(
-      "text-4xl",
-      "md:text-5xl",
-      "lg:text-6xl",
+      ["text-5xl", "md:text-6xl", "lg:text-7xl"],
       "font-poiret",
       className
     )}
@@ -58,7 +51,7 @@ export const Heading1 = ({
 );
 
 export const Heading2 = ({ children }: { children: ReactNode }) => (
-  <h2 className={c("text-3xl", "md:text-4xl", "lg:text-5xl", "font-poiret")}>
+  <h2 className={c(["text-2xl", "md:text-3xl", "lg:text-4xl"], "font-poiret")}>
     {children}
   </h2>
 );

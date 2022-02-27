@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import c from "../common/classNames";
+import Colophon, { ColophonDivider, ColophonLink } from "../common/Colophon";
 import { GithubIcon, InstagramIcon } from "../common/Icons";
 import Link from "../common/Link";
 import PersonBox, { LinkWithIcon } from "../common/PersonBox";
@@ -14,7 +15,7 @@ const fadeInStyles = (animate: boolean) => [
 const animateStyles = [
   "motion-reduce:transition-none",
   "ease-out",
-  "delay-1000",
+  "delay-500",
   "duration-1000",
 ];
 
@@ -25,107 +26,143 @@ const IndexPage = () => {
   }, [setAnimate]);
 
   return (
-    <main
+    <div
       className={c(
         ["w-full", "min-h-screen"],
         ["bg-teal-975", "text-teal-50"],
-        ["flex", "flex-col", "items-center", "justify-evenly"]
+        ["flex", "flex-col", "justify-between", "gap-16", "md:gap-32"]
       )}
     >
-      <title>🌿 Fehrnström-Gröhn</title>
-      <div
+      <main
         className={c(
-          ["px-8", "md:px-16", "py-4", "md:py-8"],
+          ["grow"],
           [
             "flex",
             "flex-col",
             "items-center",
-            "gap-8",
-            "md:gap-16",
-            "lg:gap-32",
-          ]
-        )}
-      >
-        <span
-          className={c(
-            ["text-5xl", "md:text-6xl", "lg:text-7xl"],
-            ...fadeInStyles(animate),
-            animateStyles
-          )}
-        >
-          🌿
-        </span>
-        <Heading1 className={c(...fadeInStyles(animate), animateStyles)}>
-          <InlineBlockSpan
-            className={c(
-              animate ? "translate-x-0" : "-translate-x-1/2",
-              animateStyles
-            )}
-          >
-            Fehrnström
-          </InlineBlockSpan>
-          <InlineBlockSpan className={c(animateStyles)}>-</InlineBlockSpan>
-          <InlineBlockSpan
-            className={c(
-              animate ? "translate-x-0" : "translate-x-1/2",
-              animateStyles
-            )}
-          >
-            Gröhn
-          </InlineBlockSpan>
-        </Heading1>
-      </div>
-      <div
-        className={c(
-          ["w-full", "lg:w-5/6", "px-8", "md:px-16", "py-4", "md:py-8"],
-          [
-            "flex",
-            "flex-none",
-            "flex-row",
-            "flex-wrap",
-            "md:flex-nowrap",
             "justify-evenly",
             "gap-8",
             "md:gap-16",
           ]
         )}
       >
-        <PersonBox
-          title="Linnéa"
-          email="linnea@fehrnstrom-grohn.se"
-          fullName="Linnea Fehrnström-Gröhn"
+        <title>🌿 Fehrnström-Gröhn</title>
+        <div
+          className={c(
+            ["w-full", "min-h-[50vh]"],
+            ["px-8", "md:px-16"],
+            [
+              "flex",
+              "flex-col",
+              "items-center",
+              "justify-center",
+              "gap-8",
+              "md:gap-16",
+            ]
+          )}
         >
-          <Link uri="https://www.fehrnstrom-ark.se/">
-            <img
-              className={c("inline-block", "w-40", "max-w-full")}
-              src={fehrnstromArkLogo}
-              alt="Fehrnström Arkitektur logotyp"
-            />
-            <br />
-            fehrnstrom-ark.se
-          </Link>
-        </PersonBox>
-        <PersonBox title="Hus" email="hus@fehrnstrom-grohn.se" couldWrap>
-          Följ vår husflytt av ett <Emph>1800-tals</Emph> timmerhus från Småland
-          till Vårgårda.
-          <br />
-          <LinkWithIcon icon={<InstagramIcon />}>
-            <Link uri="https://www.instagram.com/utsikten.nummer2/">
-              @utsikten.nummer2
+          <div
+            className={c(
+              ["text-6xl", "md:text-7xl", "lg:text-8xl"],
+              ...fadeInStyles(animate),
+              animate ? "translate-y-0" : "-translate-y-1/2",
+              animateStyles
+            )}
+          >
+            🌿
+          </div>
+          <Heading1 className={c(...fadeInStyles(animate), animateStyles)}>
+            <InlineBlockSpan
+              className={c(
+                animate ? "translate-x-0" : "-translate-x-1/2",
+                animateStyles
+              )}
+            >
+              Fehrnström
+            </InlineBlockSpan>
+            <InlineBlockSpan className={c(animateStyles)}>-</InlineBlockSpan>
+            <InlineBlockSpan
+              className={c(
+                animate ? "translate-x-0" : "translate-x-1/2",
+                animateStyles
+              )}
+            >
+              Gröhn
+            </InlineBlockSpan>
+          </Heading1>
+        </div>
+        <div
+          className={c(
+            ["w-full", "max-w-7xl", "px-8", "md:px-16"],
+            ["flex", "flex-row", "flex-wrap", "md:flex-nowrap"],
+            ["justify-between", "gap-8", "md:gap-16"],
+            ...fadeInStyles(animate),
+            animate ? "translate-y-0" : "translate-y-1/2",
+            animateStyles
+          )}
+        >
+          <PersonBox
+            title="Linnéa"
+            email="linnea@fehrnstrom-grohn.se"
+            fullName="Linnea Fehrnström-Gröhn"
+          >
+            <Link uri="https://www.fehrnstrom-ark.se/">
+              <img
+                className={c("inline-block", "w-40", "max-w-full")}
+                src={fehrnstromArkLogo}
+                alt="Fehrnström Arkitektur logotyp"
+              />
             </Link>
-          </LinkWithIcon>
-        </PersonBox>
-        <PersonBox
-          title="Sebastian"
-          email="sebastian@fehrnstrom-grohn.se"
-          fullName="Sebastian Fehrnström-Gröhn"
-        >
-          <LinkWithIcon icon={<GithubIcon />}>
-            <Link uri="https://github.com/sebgrohn">github.com/sebgrohn</Link>
-          </LinkWithIcon>
-        </PersonBox>
-      </div>
-    </main>
+          </PersonBox>
+          <PersonBox title="Hus" email="hus@fehrnstrom-grohn.se" couldWrap>
+            Följ vår husflytt av ett <Emph>1800-tals</Emph> timmerhus från
+            Småland till Vårgårda.
+            <br />
+            <LinkWithIcon icon={<InstagramIcon />}>
+              <Link uri="https://www.instagram.com/utsikten.nummer2/">
+                @utsikten.nummer2
+              </Link>
+            </LinkWithIcon>
+          </PersonBox>
+          <PersonBox
+            title="Sebastian"
+            email="sebastian@fehrnstrom-grohn.se"
+            fullName="Sebastian Fehrnström-Gröhn"
+          >
+            <LinkWithIcon icon={<GithubIcon />}>
+              <Link uri="https://github.com/sebgrohn">github.com/sebgrohn</Link>
+            </LinkWithIcon>
+          </PersonBox>
+        </div>
+      </main>
+      <footer
+        className={c(
+          ["px-8", "md:px-16", "pt-8", "pb-4", "md:py-8"],
+          [
+            "bg-gradient-to-b",
+            "from-transparent",
+            "via-teal-990",
+            "to-teal-990",
+          ]
+        )}
+      >
+        <Colophon>
+          Byggt med{" "}
+          <ColophonLink uri="https://www.gatsbyjs.org/">Gatsby</ColophonLink>,{" "}
+          <ColophonLink uri="https://tailwindcss.com/">
+            Tailwind CSS
+          </ColophonLink>{" "}
+          och{" "}
+          <ColophonLink uri="https://iconscout.com/unicons">
+            Unicons
+          </ColophonLink>
+          <ColophonDivider />
+          <ColophonLink uri="https://github.com/sebgrohn/fehrnstrom-grohn.se">
+            Källkod
+          </ColophonLink>
+        </Colophon>
+      </footer>
+    </div>
   );
 };
 
