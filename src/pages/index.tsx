@@ -7,9 +7,9 @@ import PersonBox, { LinkWithIcon } from "../common/PersonBox";
 import { Emph, Heading1, InlineBlockSpan } from "../common/Text";
 import fehrnstromArkLogo from "../images/fehrnstrom_ark_logo.svg";
 
-const fadeInStyles = (animate: boolean) => [
+const fadeInStyles = (animate: boolean, { scale = true } = {}) => [
   animate ? "blur-none" : "blur-md",
-  animate ? "scale-100" : "scale-150",
+  scale && (animate ? "scale-100" : "scale-150"),
   animate ? "opacity-100" : "opacity-0",
 ];
 const animateStyles = [
@@ -96,7 +96,7 @@ const IndexPage = () => {
             ["w-full", "max-w-7xl", "px-8", "md:px-16"],
             ["flex", "flex-row", "flex-wrap", "md:flex-nowrap"],
             ["justify-between", "gap-8", "md:gap-16"],
-            ...fadeInStyles(animate),
+            ...fadeInStyles(animate, { scale: false }),
             animate ? "translate-y-0" : "translate-y-1/2",
             animateStyles
           )}
@@ -143,23 +143,45 @@ const IndexPage = () => {
             "from-transparent",
             "via-teal-990",
             "to-teal-990",
-          ]
+          ],
+          ...fadeInStyles(animate, { scale: false }),
+          animate ? "translate-y-0" : "translate-y-1/2",
+          animateStyles
         )}
       >
         <Colophon>
-          Byggt med{" "}
-          <ColophonLink uri="https://www.gatsbyjs.org/">Gatsby</ColophonLink>,{" "}
-          <ColophonLink uri="https://tailwindcss.com/">
-            Tailwind CSS
-          </ColophonLink>{" "}
-          och{" "}
-          <ColophonLink uri="https://iconscout.com/unicons">
-            Unicons
-          </ColophonLink>
+          <InlineBlockSpan>
+            Byggt med{" "}
+            <ColophonLink uri="https://www.gatsbyjs.org/">Gatsby</ColophonLink>{" "}
+            och{" "}
+            <ColophonLink uri="https://tailwindcss.com/">
+              Tailwind CSS
+            </ColophonLink>{" "}
+          </InlineBlockSpan>
           <ColophonDivider />
-          <ColophonLink uri="https://github.com/sebgrohn/fehrnstrom-grohn.se">
-            Källkod
-          </ColophonLink>
+          <InlineBlockSpan>
+            Ikoner från{" "}
+            <ColophonLink uri="https://iconscout.com/unicons">
+              Unicons
+            </ColophonLink>
+          </InlineBlockSpan>
+          <ColophonDivider />
+          <InlineBlockSpan>
+            Typsnitt:{" "}
+            <ColophonLink uri="https://www.behance.net/gallery/3273549/POIRET">
+              Poiret One
+            </ColophonLink>{" "}
+            och{" "}
+            <ColophonLink uri="https://github.com/googlefonts/opensans">
+              Open Sans
+            </ColophonLink>
+          </InlineBlockSpan>
+          <ColophonDivider />
+          <InlineBlockSpan>
+            <ColophonLink uri="https://github.com/sebgrohn/fehrnstrom-grohn.se">
+              Källkod
+            </ColophonLink>
+          </InlineBlockSpan>
         </Colophon>
       </footer>
     </div>

@@ -30,7 +30,7 @@ const PersonBox = ({
   couldWrap?: boolean;
   children?: ReactNode;
 }) => (
-  <div
+  <section
     className={c(
       ["flex-auto", "basis-2/5", "md:basis-full"],
       ["flex", "flex-col", "gap-4", "md:gap-8"],
@@ -45,7 +45,7 @@ const PersonBox = ({
       </LinkWithIcon>
     </Para>
     {children && <Para>{children}</Para>}
-  </div>
+  </section>
 );
 
 export default PersonBox;
