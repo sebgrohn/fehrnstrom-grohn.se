@@ -1,4 +1,4 @@
-name: Publish Gatsby site to GitHub Pages
+name: Publish site to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
           cache: yarn
       - name: Setup Pages
         id: pages
